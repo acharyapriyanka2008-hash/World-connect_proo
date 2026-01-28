@@ -3,10 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DelishDeliver - Premium Food Delivery</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>WORLD CONNECT - Ultra-Luxury Brand</title>
     <style>
         /* Reset and Base Styles */
         * {
@@ -14,259 +11,299 @@
             padding: 0;
             box-sizing: border-box;
         }
+
         body {
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            color: #ffffff;
+            overflow-x: hidden;
+            position: relative;
         }
 
-        /* Header */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        /* Premium Fade-in Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-        }
-        .logo {
-            font-size: 28px;
-            font-weight: 700;
-            color: #fff;
-        }
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-        .nav-links li {
-            margin-left: 30px;
-        }
-        .nav-links a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-        .nav-links a:hover {
-            color: #ffd700;
-        }
-        .btn {
-            background: rgba(255, 255, 255, 0.2);
-            color: #fff;
-            padding: 10px 20px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-        }
-        .btn:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: scale(1.05);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+
+        .fade-in {
+            animation: fadeIn 1.5s ease-out forwards;
         }
 
         /* Hero Section */
         .hero {
             height: 100vh;
             display: flex;
-            align-items: center;
+            flex-direction: column;
             justify-content: center;
-            text-align: center;
-            color: #fff;
+            align-items: center;
             position: relative;
-            overflow: hidden;
+            background: radial-gradient(circle, #000000 0%, #0d0d0d 100%);
         }
-        .hero::before {
-            content: '';
+
+        /* 3D Rotating Globe */
+        .globe-container {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            perspective: 1000px;
+        }
+
+        .globe {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, #ffd700 0%, #b8860b 50%, #000000 100%);
+            box-shadow: 0 0 50px rgba(255, 215, 0, 0.5);
+            animation: rotateGlobe 20s linear infinite;
+        }
+
+        @keyframes rotateGlobe {
+            from { transform: rotateY(0deg); }
+            to { transform: rotateY(360deg); }
+        }
+
+        /* Country Names as Constellation */
+        .countries {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1981&q=80') center/cover no-repeat;
-            z-index: -1;
-        }
-        .hero-content {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 20px;
-            padding: 50px;
-            max-width: 600px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-        }
-        .hero h1 {
-            font-size: 48px;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-        .hero p {
-            font-size: 18px;
-            margin-bottom: 30px;
         }
 
-        /* Features Section */
-        .features {
-            padding: 100px 0;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-        }
-        .features h2 {
-            text-align: center;
-            font-size: 36px;
-            color: #fff;
-            margin-bottom: 50px;
-        }
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        .feature-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 15px;
-            padding: 30px;
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-        .feature-card:hover {
-            transform: translateY(-10px);
-        }
-        .feature-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 10px;
-            margin-bottom: 20px;
-        }
-        .feature-card h3 {
-            font-size: 24px;
-            color: #fff;
-            margin-bottom: 15px;
-        }
-        .feature-card p {
-            color: rgba(255, 255, 255, 0.8);
+        .country {
+            position: absolute;
+            color: #ffd700;
+            font-size: 14px;
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+            animation: float 15s linear infinite;
+            opacity: 0.8;
         }
 
-        /* Footer */
-        footer {
-            background: rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(10px);
-            color: #fff;
+        /* Position countries in a spherical constellation without overlap */
+        .country:nth-child(1) { top: 10%; left: 50%; animation-delay: 0s; }
+        .country:nth-child(2) { top: 20%; left: 70%; animation-delay: 1s; }
+        .country:nth-child(3) { top: 30%; left: 30%; animation-delay: 2s; }
+        .country:nth-child(4) { top: 40%; left: 80%; animation-delay: 3s; }
+        .country:nth-child(5) { top: 50%; left: 20%; animation-delay: 4s; }
+        .country:nth-child(6) { top: 60%; left: 90%; animation-delay: 5s; }
+        .country:nth-child(7) { top: 70%; left: 40%; animation-delay: 6s; }
+        .country:nth-child(8) { top: 80%; left: 60%; animation-delay: 7s; }
+        .country:nth-child(9) { top: 90%; left: 50%; animation-delay: 8s; }
+        .country:nth-child(10) { top: 15%; left: 85%; animation-delay: 9s; }
+        /* Add more as needed for major countries */
+
+        @keyframes float {
+            0% { transform: rotate(0deg) translateX(0px) translateY(0px); }
+            25% { transform: rotate(90deg) translateX(10px) translateY(-10px); }
+            50% { transform: rotate(180deg) translateX(-10px) translateY(10px); }
+            75% { transform: rotate(270deg) translateX(-10px) translateY(-10px); }
+            100% { transform: rotate(360deg) translateX(0px) translateY(0px); }
+        }
+
+        /* CEO Section */
+        .ceo-section {
+            margin-top: 50px;
             text-align: center;
-            padding: 30px 0;
+            padding: 20px;
         }
-        footer p {
-            margin-bottom: 10px;
-        }
-        .social-links {
+
+        .ceo-profile {
+            display: inline-block;
+            border: 5px solid #ffd700;
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            background: #ffffff;
             display: flex;
             justify-content: center;
-            gap: 20px;
+            align-items: center;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
         }
-        .social-links a {
-            color: #fff;
-            font-size: 24px;
-            transition: color 0.3s ease;
-        }
-        .social-links a:hover {
+
+        .ceo-icon {
+            font-size: 60px;
             color: #ffd700;
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 36px;
-            }
-            .hero-content {
-                padding: 30px;
-            }
-            nav {
-                flex-direction: column;
-                gap: 20px;
-            }
-            .nav-links {
-                margin-top: 20px;
-            }
-            .nav-links li {
-                margin-left: 0;
-                margin-right: 20px;
-            }
+        .ceo-title {
+            margin-top: 20px;
+            font-size: 24px;
+            color: #ffd700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+        }
+
+        /* Search Bar */
+        .search-bar {
+            margin-top: 30px;
+            position: relative;
+        }
+
+        .search-input {
+            width: 300px;
+            padding: 15px;
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            color: #ffffff;
+            font-size: 16px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .search-input:focus {
+            border-color: #ffd700;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+        }
+
+        /* World Clock */
+        .world-clock {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .clock-item {
+            display: inline-block;
+            margin: 0 20px;
+            font-size: 18px;
+            color: #ffd700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+        }
+
+        /* Music Control */
+        .music-control {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: #ffd700;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .music-control:hover {
+            transform: scale(1.1);
+        }
+
+        .music-icon {
+            font-size: 20px;
+            color: #000000;
+        }
+
+        /* Audio Element (Hidden) */
+        #bgMusic {
+            display: none;
         }
     </style>
 </head>
 <body>
-    <header>
-        <nav class="container">
-            <div class="logo">DelishDeliver</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#menu">Menu</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <a href="#" class="btn">Order Now</a>
-        </nav>
-    </header>
-
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h1>Delicious Food, Delivered Fast</h1>
-            <p>Experience premium dining at your doorstep. Fresh ingredients, expert chefs, and lightning-fast delivery.</p>
-            <a href="#" class="btn">Explore Menu</a>
-        </div>
-    </section>
-
-    <section class="features" id="menu">
-        <div class="container">
-            <h2>Our Featured Dishes</h2>
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <img src="https://images.unsplash.com/photo-1565299507177-b0ac66763828?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1982&q=80" alt="Gourmet Burger">
-                    <h3>Gourmet Burger</h3>
-                    <p>Juicy beef patty with fresh veggies and special sauce. A classic reinvented.</p>
-                </div>
-                <div class="feature-card">
-                    <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Wood-fired Pizza">
-                    <h3>Wood-fired Pizza</h3>
-                    <p>Authentic Italian pizza baked in a traditional wood-fired oven.</p>
-                </div>
-                <div class="feature-card">
-                <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd" alt="Healthy Salad">  
-                    <h3>Healthy Salad</h3>
-                    <p>Fresh greens, organic veggies, and a light vinaigrette dressing.</p>
-                </div>
+    <!-- Hero Section -->
+    <section class="hero fade-in">
+        <div class="globe-container">
+            <div class="globe"></div>
+            <div class="countries">
+                <div class="country">USA</div>
+                <div class="country">UK</div>
+                <div class="country">Japan</div>
+                <div class="country">China</div>
+                <div class="country">India</div>
+                <div class="country">Germany</div>
+                <div class="country">France</div>
+                <div class="country">Brazil</div>
+                <div class="country">Russia</div>
+                <div class="country">Australia</div>
+                <!-- Add more major countries as needed -->
             </div>
         </div>
+        <h1 style="color: #ffd700; font-size: 48px; margin-top: 20px; text-shadow: 0 0 20px rgba(255, 215, 0, 0.8);">WORLD CONNECT</h1>
     </section>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2023 DelishDeliver. All rights reserved.</p>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-            </div>
+    <!-- CEO Section -->
+    <section class="ceo-section fade-in">
+        <div class="ceo-profile">
+            <div class="ceo-icon">👑</div> <!-- Icon instead of photo -->
         </div>
-    </footer>
+        <div class="ceo-title">Priyanka - Global Visionary</div>
+    </section>
+
+    <!-- Search Bar -->
+    <section class="search-bar fade-in">
+        <input type="text" class="search-input" placeholder="Search the World...">
+    </section>
+
+    <!-- World Clock -->
+    <section class="world-clock fade-in">
+        <div class="clock-item" id="ny-time">New York: --:--</div>
+        <div class="clock-item" id="london-time">London: --:--</div>
+        <div class="clock-item" id="tokyo-time">Tokyo: --:--</div>
+    </section>
+
+    <!-- Music Control -->
+    <div class="music-control" id="musicBtn">
+        <div class="music-icon" id="musicIcon">▶️</div>
+    </div>
+
+    <!-- Background Music -->
+    <audio id="bgMusic" loop>
+        <source src="https://www.soundjay.com/misc/sounds/bell-ringing-05.wav" type="audio/wav"> <!-- Placeholder: Replace with actual premium piano track URL -->
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        // World Clock Functionality
+        function updateClocks() {
+            const now = new Date();
+            const nyTime = new Date(now.toLocaleString("en-US", {timeZone: "America/New_York"}));
+            const londonTime = new Date(now.toLocaleString("en-US", {timeZone: "Europe/London"}));
+            const tokyoTime = new Date(now.toLocaleString("en-US", {timeZone: "Asia/Tokyo"}));
+
+            document.getElementById('ny-time').textContent = `New York: ${nyTime.toLocaleTimeString()}`;
+            document.getElementById('london-time').textContent = `London: ${londonTime.toLocaleTimeString()}`;
+            document.getElementById('tokyo-time').textContent = `Tokyo: ${tokyoTime.toLocaleTimeString()}`;
+        }
+
+        setInterval(updateClocks, 1000);
+        updateClocks();
+
+        // Music Control
+        const bgMusic = document.getElementById('bgMusic');
+        const musicBtn = document.getElementById('musicBtn');
+        const musicIcon = document.getElementById('musicIcon');
+        let isPlaying = false;
+        let hasPlayed = false;
+
+        // Auto-play on first click anywhere
+        document.addEventListener('click', function() {
+            if (!hasPlayed) {
+                bgMusic.play();
+                isPlaying = true;
+                musicIcon.textContent = '⏸️';
+                hasPlayed = true;
+            }
+        });
+
+        // Toggle play/pause on button click
+        musicBtn.addEventListener('click', function(e) {
+            e.stopPropagation(); // Prevent triggering the document click
+            if (isPlaying) {
+                bgMusic.pause();
+                musicIcon.textContent = '▶️';
+            } else {
+                bgMusic.play();
+                musicIcon.textContent = '⏸️';
+            }
+            isPlaying = !isPlaying;
+        });
+    </script>
 </body>
 </html>
